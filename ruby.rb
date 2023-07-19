@@ -13,12 +13,24 @@ end
 puts decode_char('.-')
 
 def decode_word(code)
- chr = code.split(" ") 
- word = ""
- chr.each do |item| 
- word += decode_char(item)
- end
- word
- end
+  chr = code.split
+  word = ''
+  chr.each do |item|
+    word += decode_char(item)
+  end
+  word
+end
 
- decode_word("-- -.--")
+puts decode_word('-- -.--')
+
+def decode(code)
+  words = code.split('   ')
+  msg = ''
+  words.each do |item|
+    msg += decode_word(item) + ' '
+  end
+  msg.strip
+end
+
+puts decode("-- -.--   -. .- -- .")
+puts decode(".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...")
