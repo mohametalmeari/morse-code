@@ -27,10 +27,10 @@ def decode(code)
   words = code.split('   ')
   msg = ''
   words.each do |item|
-    msg += decode_word(item) + ' '
+    msg += "#{decode_word(item)} "
   end
   msg.strip
 end
 
-puts decode("-- -.--   -. .- -- .")
-puts decode(".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...")
+puts decode('-- -.--   -. .- -- .')
+puts decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
